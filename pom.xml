@@ -11,13 +11,14 @@
 
     <modules>
         <module>frontend-service</module>
+        <module>shared-events</module>
     </modules>
 
     <properties>
-        <quarkus.platform.version>3.22.2</quarkus.platform.version>
-        <quarkus.plugin.version>${quarkus.platform.version}</quarkus.plugin.version>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
+        <quarkus.platform.version>3.22.2</quarkus.platform.version>
+        <quarkus.plugin.version>${quarkus.platform.version}</quarkus.plugin.version>
         
         <java.version>23</java.version>
         <maven.compiler.release>23</maven.compiler.release>
