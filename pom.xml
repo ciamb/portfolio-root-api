@@ -12,6 +12,7 @@
     <modules>
         <module>frontend-service</module>
         <module>shared-events</module>
+        <module>about-service</module>
     </modules>
 
     <properties>

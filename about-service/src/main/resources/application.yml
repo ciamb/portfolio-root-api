@@ -1,0 +1,19 @@
+kafka:
+  bootstrap:
+    servers: localhost:9092
+
+mp:
+  messaging:
+    incoming:
+      about-requested:
+        connector: smallrye-kafka
+        topic: about.requested
+        value:
+          deserializer: io.quarkus.kafka.client.serialization.ObjectMapperDeserializer
+        value-type: com.andrea.events.about.AboutRequested
+    outgoing:
+      about-responded:
+        connector: smallrye-kafka
+        topic: about.responded
+        value:
+          serializer: io.quarkus.kafka.client.serialization.ObjectMapperSerializer
