@@ -1,0 +1,17 @@
+skills:
+  - name: Java
+    level: Advanced
+  - name: Quarkus
+    level: Intermediate
+  - name: Spring
+    level: Advanced
+  - name: Kafka
+    level: Intermediate
+  - name: RabbitMQ
+    level: Intermediate
+  - name: Docker
+    level: Intermediate
+  - name: Git
+    level: Intermediate
+  - name: PostgreSQL
+    level: Intermediate
