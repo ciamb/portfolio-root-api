@@ -2,7 +2,8 @@ package com.andrea.portfolio.rest;
 
 import java.util.UUID;
 
-import com.andrea.portfolio.service.AboutEventService;
+import com.andrea.portfolio.service.about.AboutEventService;
+
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
