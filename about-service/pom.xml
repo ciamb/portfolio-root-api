@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.andrea</groupId>
     <artifactId>about-service</artifactId>
-    <version>1.0.0</version>
+    <version>${portfolio-api-root.version}</version>
     
     <parent>
           <groupId>com.andrea</groupId>
           <artifactId>portfolio-api-root</artifactId>
-          <version>1.0.0</version>
+          <version>${portfolio-api-root.version}</version>
     </parent>
 
     <name>about-service</name>

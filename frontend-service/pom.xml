@@ -3,41 +3,29 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.andrea.frontend</groupId>
     <artifactId>frontend-service</artifactId>
-    <version>1.0.0</version>
+    <version>${portfolio-api-root.version}</version>
 
     <parent>
         <groupId>com.andrea</groupId>
         <artifactId>portfolio-api-root</artifactId>
-        <version>1.0.0</version>
+        <version>${portfolio-api-root.version}</version>
     </parent>
 
     <dependencies>
+
+        <!-- Swagger/openapi -->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-smallrye-openapi</artifactId>
         </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-rest-jackson</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-config-yaml</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-arc</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-qute</artifactId>
-        </dependency>
+    
+        <!-- Qute -->
         <dependency>
             <groupId>io.quarkiverse.qute.web</groupId>
             <artifactId>quarkus-qute-web</artifactId>
         </dependency>
         
-        <!-- kafka -->
+        <!-- Quarkus -->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-messaging-kafka</artifactId>
@@ -50,12 +38,16 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-jackson</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-config-yaml</artifactId>
+        </dependency>
 
         <!-- shared-events -->
         <dependency>
             <groupId>com.andrea.events</groupId>
             <artifactId>shared-events</artifactId>
-            <version>1.0.0</version>
+            <version>${portfolio-api-root.version}</version>
         </dependency>
 
         <!-- test -->
