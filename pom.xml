@@ -6,7 +6,7 @@
 
     <groupId>com.andrea</groupId>
     <artifactId>portfolio-api-root</artifactId>
-    <version>${portfolio-api-root.version}</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -20,8 +20,6 @@
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.version>3.22.2</quarkus.platform.version>
         <quarkus.plugin.version>${quarkus.platform.version}</quarkus.plugin.version>
-
-        <portfolio-api-root.version>1.0.0</portfolio-api-root.version>
         
         <java.version>23</java.version>
         <maven.compiler.release>23</maven.compiler.release>
