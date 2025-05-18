@@ -1,6 +1,6 @@
 kafka:
   bootstrap:
-    servers: localhost:9092
+    servers: PLAINTEXT://localhost:9092
 
 mp:
   messaging:
@@ -9,11 +9,12 @@ mp:
         connector: smallrye-kafka
         topic: about.requested
         value:
-          deserializer: io.quarkus.kafka.client.serialization.ObjectMapperDeserializer
+          deserializer: com.andrea.events.about.kafka.deserializer.AboutRequestedDeserializer
         value-type: com.andrea.events.about.AboutRequested
     outgoing:
       about-responded:
         connector: smallrye-kafka
         topic: about.responded
         value:
-          serializer: io.quarkus.kafka.client.serialization.ObjectMapperSerializer
+          serializer: com.andrea.events.about.kafka.serializer.AboutRespondedSerializer
+        value-type: com.andrea.events.about.AboutResponded

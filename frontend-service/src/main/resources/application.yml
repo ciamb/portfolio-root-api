@@ -1,0 +1,25 @@
+quarkus:
+  http:
+    port: 8081
+
+kafka:
+  bootstrap:
+    servers: PLAINTEXT://localhost:9092
+
+mp:
+  messaging:
+    # incoming
+    incoming:
+      about-responded:
+        connector: smallrye-kafka
+        topic: about.responded
+        value:
+          deserializer: com.andrea.events.about.kafka.deserializer.AboutRespondedDeserializer
+    # outgoing
+    outgoing:
+      about-requested:
+        connector: smallrye-kafka
+        topic: about.requested
+        value:
+          serializer: com.andrea.events.about.kafka.serializer.AboutRequestedSerializer
+

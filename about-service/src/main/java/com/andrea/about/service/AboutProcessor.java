@@ -21,15 +21,14 @@ public class AboutProcessor {
         log.info(() -> "[!] received AboutRequested: %s".formatted(event));
         
         var res = new AboutResponded(
-            event.requestId(),
-            "Andrea",
-            "Backend Developer",
-            "Sviluppatore Java con 3 anni di esperienza",
-            "Tarquinia, Italy",
-            "andreaciambella@outlook.it",
-            "https://github.com/ciamb"
-        );
-        
+                event.requestId(),
+                "Andrea",
+                "Backend Developer",
+                "Sviluppatore Java con 3 anni di esperienza",
+                "Tarquinia, Italy",
+                "andreaciambella@outlook.it",
+                "https://github.com/ciamb");
+
         return Uni.createFrom().item(res);
     }
 
