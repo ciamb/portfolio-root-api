@@ -1,9 +1,13 @@
 package com.andrea.portfolio.rest;
 
 import java.util.UUID;
+import java.util.logging.Logger;
 
 import com.andrea.portfolio.service.about.AboutEventService;
 
+import io.quarkus.qute.Location;
+import io.quarkus.qute.Template;
+import io.smallrye.mutiny.Uni;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -13,20 +17,29 @@ import jakarta.ws.rs.core.MediaType;
 @Path("/about")
 public class AboutResource {
 
+    private final Logger log = Logger.getLogger(getClass().getSimpleName());
     private final AboutEventService service;
+    private final Template about;
 
     @Inject
     public AboutResource(
-            AboutEventService service) {
+            AboutEventService service,
+            @Location("about.qute.html") Template about) {
         this.service = service;
+        this.about = about;
     }
 
     @GET
-    @Path("/trigger")
-    @Produces(value = MediaType.TEXT_PLAIN)
-    public String triggerEvent() {
-        service.sendAboutRequested(UUID.randomUUID().toString());
-        return "[i] event AboutRequested sent to kafka!";
+    @Path("/ui")
+    @Produces(value = MediaType.TEXT_HTML)
+    public Uni<String> uiFragment() {
+
+        return service.sendAndAwait(UUID.randomUUID().toString())
+                .onItem()
+                .transform(response -> {
+                    log.info(() -> "[!] transforming AboutResponded partial");
+                    return about.data("about", response).render();
+                });
     }
 
 }

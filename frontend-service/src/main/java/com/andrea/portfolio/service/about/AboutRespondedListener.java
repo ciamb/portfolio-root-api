@@ -16,16 +16,18 @@ public class AboutRespondedListener {
     private final Logger log = Logger.getLogger(getClass().getSimpleName());
     
     private final EventLogBroadcaster broadcaster;
+    private final AboutTemplateService aboutTemplateService;
 
     @Inject
-    public AboutRespondedListener(EventLogBroadcaster broadcaster) {
+    public AboutRespondedListener(EventLogBroadcaster broadcaster, AboutTemplateService aboutTemplateService) {
         this.broadcaster = broadcaster;
+        this.aboutTemplateService = aboutTemplateService;
     }
 
     @Incoming("about-responded")
-    public AboutResponded consumeAboutResponse(AboutResponded response) {
+    public void consumeAboutResponse(AboutResponded response) {
         log.info(() -> "[!] received AboutResponded: %s".formatted(response));
         broadcaster.broadcast(response, "about.responded");
-        return response;
+        aboutTemplateService.setAboutResponded(response);
     }
 }
