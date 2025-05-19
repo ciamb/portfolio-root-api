@@ -12,7 +12,7 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
-@Path("/log")
+@Path("/event-log")
 public class EventLogResource {
 
     private final EventLogBroadcaster broadcaster;
@@ -34,7 +34,7 @@ public class EventLogResource {
     }
 
     @GET
-    @Path("/event-log-ui")
+    @Path("/ui")
     @Produces(value = {MediaType.TEXT_HTML, MediaType.TEXT_PLAIN})
     public TemplateInstance ui() {
         return eventLog.instance();

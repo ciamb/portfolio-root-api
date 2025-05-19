@@ -32,12 +32,13 @@ public class AboutResource {
     @GET
     @Path("/ui")
     @Produces(value = MediaType.TEXT_HTML)
-    public Uni<String> uiFragment() {
+    public Uni<String> ui() {
 
         return service.sendAndAwait(UUID.randomUUID().toString())
                 .onItem()
+                .ifNotNull()
                 .transform(response -> {
-                    log.info(() -> "[!] transforming AboutResponded partial");
+                    log.info(() -> "[!] transforming AboutResponded in partial UI");
                     return about.data("about", response).render();
                 });
     }

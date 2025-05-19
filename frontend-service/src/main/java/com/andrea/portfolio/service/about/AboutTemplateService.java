@@ -21,7 +21,7 @@ public class AboutTemplateService {
     }
 
     public void setAboutResponded(AboutResponded response) {
-        log.info(() -> "[TemplateService] ricevuto: %s".formatted(response));
+        log.info(() -> "received template to render: %s".formatted(response));
         Consumer<AboutResponded> waiter = waiters.remove(response.requestId());
         if (waiter != null) {
             waiter.accept(response);

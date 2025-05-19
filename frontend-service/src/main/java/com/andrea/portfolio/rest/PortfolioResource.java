@@ -9,10 +9,10 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.core.MediaType;
 
 @Path("/portfolio")
-public class DashboardResource {
+public class PortfolioResource {
     private final Template layout;
 
-    public DashboardResource(
+    public PortfolioResource(
             @Location("layout.qute.html") Template layout) {
         this.layout = layout;
     }
@@ -25,9 +25,9 @@ public class DashboardResource {
     }
 
     @GET
-    @Path("/fragment")
+    @Path("/ui")
     @Produces(MediaType.TEXT_HTML)
-    public String portfolioFragment() {
+    public String ui() {
         return "<p>Benvenuto nel portfolio!</p>";
     }
 }
