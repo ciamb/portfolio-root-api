@@ -11,7 +11,7 @@
 
   <script>
     const logDiv = document.getElementById("log");
-    const evtSource = new EventSource("/log/stream");
+    const evtSource = new EventSource("/event-log/stream");
 
     evtSource.onmessage = (e) => {
       const entry = document.createElement("div");
