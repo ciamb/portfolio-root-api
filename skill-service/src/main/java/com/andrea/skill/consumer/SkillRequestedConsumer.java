@@ -25,9 +25,9 @@ public class SkillRequestedConsumer {
 
     @Incoming("skill-requested")
     @Outgoing("skill-responded")
-    public Uni<SkillResponded> onSkillRequested(String event) {
+    public Uni<SkillResponded> onSkillRequested(String requestId) {
         log.info(() -> "[!] received request for skills list");
-        var res = new SkillResponded(skillLoader.getSkills());
+        var res = new SkillResponded(requestId, skillLoader.getSkills());
         return Uni.createFrom().item(res); 
     }
 

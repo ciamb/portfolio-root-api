@@ -15,6 +15,12 @@ mp:
         topic: about.responded
         value:
           deserializer: com.andrea.events.about.kafka.deserializer.AboutRespondedDeserializer
+      skill-responded:
+        connector: smallrye-kafka
+        topic: skill.responded
+        value:
+          deserializer: com.andrea.events.skill.kafka.deserializer.SkillRespondedDeserializer
+
     # outgoing
     outgoing:
       about-requested:
@@ -22,4 +28,9 @@ mp:
         topic: about.requested
         value:
           serializer: com.andrea.events.about.kafka.serializer.AboutRequestedSerializer
+      skill-requested:
+        connector: smallrye-kafka
+        topic: skill.requested
+        value:
+          serializer: org.apache.kafka.common.serialization.StringSerializer
 
