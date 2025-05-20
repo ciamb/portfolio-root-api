@@ -1,0 +1,29 @@
+skills:
+  values:
+    - Java
+    - Spring
+    - Quarkus
+
+quarkus:
+  http:
+    port: 8082
+
+# kafka
+kafka:
+  bootstrap:
+    servers: PLAINTEXT://localhost:9092
+
+mp:
+  messaging:
+    incoming:
+      skill-requested:
+        connector: smallrye-kafka
+        topic: skill.requested
+        value:
+          deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    outgoing:
+      skill-responded:
+        connector: smallrye-kafka
+        topic: skill.responded  
+        value:
+          serializer: com.andrea.events.skill.kafka.serializer.SkillRespondedSerializer
