@@ -6,7 +6,7 @@
 
     <groupId>com.andrea</groupId>
     <artifactId>portfolio-api-root</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <packaging>pom</packaging>
 
     <modules>
