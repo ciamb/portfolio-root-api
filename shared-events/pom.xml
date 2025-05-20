@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.andrea.events</groupId>
     <artifactId>shared-events</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <parent>
           <groupId>com.andrea</groupId>
           <artifactId>portfolio-api-root</artifactId>
-          <version>1.0.0</version>
+          <version>1.0.1</version>
     </parent>
 
     <packaging>jar</packaging>
