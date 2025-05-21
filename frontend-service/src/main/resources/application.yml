@@ -1,10 +1,6 @@
-quarkus:
-  http:
-    port: 8081
-
 kafka:
   bootstrap:
-    servers: PLAINTEXT://localhost:9092
+    servers: PLAINTEXT://kafka:9092
 
 mp:
   messaging:

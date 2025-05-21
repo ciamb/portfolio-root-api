@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.andrea</groupId>
     <artifactId>skill-service</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.3</version>
 
     <parent>
         <groupId>com.andrea</groupId>
         <artifactId>portfolio-api-root</artifactId>
-        <version>1.0.3-SNAPSHOT</version>
+        <version>1.0.3</version>
     </parent>
 
     <name>skill-service</name>
@@ -38,7 +38,7 @@
         <dependency>
             <groupId>com.andrea.events</groupId>
             <artifactId>shared-events</artifactId>
-            <version>1.0.3-SNAPSHOT</version>
+            <version>1.0.3</version>
         </dependency>
     </dependencies>
 

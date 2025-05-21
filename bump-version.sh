@@ -1,5 +1,7 @@
 #!/bin/bash
 echo "[DEBUG] current directory: $(pwd)"
+echo
+echo
 
 ROOT_POM="pom.xml"
 INTERNAL_MODULES=("shared-events")
@@ -13,21 +15,29 @@ if [[ -z "$CURRENT_VERSION" ]]; then
 fi
 
 echo "[DEBUG] version found = $CURRENT_VERSION"
+echo
+echo
 
 # get new version
 if [[ "$CURRENT_VERSION" == *-SNAPSHOT ]]; then
     NEW_VERSION="${CURRENT_VERSION%-SNAPSHOT}"
     echo "[INFO] remove SNAPSHOT → $NEW_VERSION"
+    echo
+    echo
 else
     BASE_VERSION=$(echo "$CURRENT_VERSION" | awk -F. '{print $1"."$2}')
     PATCH=$(echo "$CURRENT_VERSION" | awk -F. '{print $3}')
     PATCH=$((PATCH + 1))
     NEW_VERSION="$BASE_VERSION.$PATCH-SNAPSHOT"
     echo "[INFO] update SNAPSHOT → $NEW_VERSION"
+    echo
+    echo
 fi
 
 echo "[INFO] update portfolio-api-root pom.xml..."
 sed -i "0,/<version>$CURRENT_VERSION<\/version>/s//<version>$NEW_VERSION<\/version>/" "$ROOT_POM"
+echo
+echo
 
 # apply new version to all pom
 for pom in $(find . -name "pom.xml" ! -path "./target/*" ! -path "./.*/pom.xml"); do
@@ -56,4 +66,6 @@ for pom in $(find . -name "pom.xml" ! -path "./target/*" ! -path "./.*/pom.xml")
     fi
 done
 
+echo
+echo
 echo "[OK] updated all pom.xml from $CURRENT_VERSION to $NEW_VERSION"
