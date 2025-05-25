@@ -4,7 +4,7 @@ quarkus:
 
 kafka:
   bootstrap:
-    servers: PLAINTEXT://kafka:9092
+    servers: PLAINTEXT://localhost:9092
 
 mp:
   messaging:
